@@ -1,0 +1,21 @@
+{
+  "name": "idle-hands",
+  "version": "0.0.1",
+  "description": "Perform low priority processing when event loop is idle.",
+  "main": "./build/Release/idle_hands",
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "test": "node test/tests.js",
+    "install": "node-gyp rebuild"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/JamesHight/node-idle-hands"
+  },
+  "author": "James Hight",
+  "license": "Apache 2",
+  "gypfile": true,
+  "readmeFilename": "README.md",
+  "engines": { "node": "*" }
+}
