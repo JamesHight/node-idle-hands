@@ -1,8 +1,8 @@
 {
   "name": "idle-hands",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Perform low priority processing when event loop is idle.",
-  "main": "./build/Release/idle_hands",
+  "main": "./lib/idle_hands",
   "dependencies": {},
   "devDependencies": {},
   "scripts": {
