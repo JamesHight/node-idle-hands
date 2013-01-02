@@ -6,7 +6,6 @@
 #include <uv.h>
 
 using namespace v8;
-using namespace std;
 
 bool running = false;
 Persistent<Function> cb;
@@ -32,14 +31,13 @@ Handle<Value> start(const Arguments& args) {
 		return ThrowException(Exception::TypeError(String::New("First argument must be a function")));
 	}
 
-	//cb = Persistent<Function>::Cast(args[0]);
-	cb = Persistent<Function>::New(Handle<Function>::Cast(args[0]));
-
-	// can only run once
+	// Don't start if already running
 	if (running) {
 		return ThrowException(Exception::TypeError(String::New("Already started")));
 	}
 	running = true;
+
+	cb = Persistent<Function>::New(Handle<Function>::Cast(args[0]));
 
 	uv_idle_init(uv_default_loop(), &idler);
 	uv_idle_start(&idler, idle_event);
